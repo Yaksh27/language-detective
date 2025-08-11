@@ -15,7 +15,7 @@ class GeminiConnector(BaseConnector):
             raise ValueError("GEMINI_API_KEY environment variable is required")
         
         genai.configure(api_key=api_key)
-        self.model = genai.GenerativeModel('gemini-pro-vision')
+        self.model = genai.GenerativeModel('gemini-2.5-pro')
     
     async def detect_language(self, audio_file_path: str) -> str:
         """Detect language using Gemini's audio analysis capabilities"""
