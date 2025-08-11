@@ -3,9 +3,9 @@ import time
 from typing import List
 from .models import ProviderResult, LanguageDetectionResponse
 from .connectors.gemini import GeminiConnector
-from .connectors.sarvam import SarvamConnector
+from .connectors.sarvam_mock import SarvamMockConnector
 from .connectors.openai_mock import OpenAIMockConnector
-from .connectors.elevenlabs_mock import ElevenLabsMockConnector
+from .connectors.elevenlabs import ElevenLabsConnector
 
 
 class LanguageDetectionCoordinator:
@@ -14,9 +14,9 @@ class LanguageDetectionCoordinator:
     def __init__(self):
         self.providers = [
             GeminiConnector(),
-            SarvamConnector(),
+            SarvamMockConnector(),
             OpenAIMockConnector(),
-            ElevenLabsMockConnector()
+            ElevenLabsConnector()
         ]
     
     async def detect_language_all_providers(self, audio_file_path: str) -> LanguageDetectionResponse:

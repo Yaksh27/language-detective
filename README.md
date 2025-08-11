@@ -8,7 +8,7 @@
 
 ## ✨ Features
 
-🚀 **Multi-Provider Support** - Integrates with Google Gemini, Sarvam AI, OpenAI (mock), and ElevenLabs (mock)  
+🚀 **Multi-Provider Support** - Integrates with Google Gemini, ElevenLabs, Sarvam AI(mock), OpenAI (mock). 
 ⚡ **Real-time Detection** - Concurrent execution across all providers for optimal performance  
 💰 **Cost Estimation** - Provides estimated costs and token usage for each provider  
 📊 **Comprehensive Metrics** - Tracks timing, success rates, and error handling  
@@ -22,9 +22,9 @@ src/
 ├── connectors/          # Provider connectors
 │   ├── base.py         # Base connector class
 │   ├── gemini.py       # Google Gemini (real implementation)
-│   ├── sarvam.py       # Sarvam AI (real implementation)
+│   ├── sarvam.py       # Sarvam AI (mock implementation)
 │   ├── openai_mock.py  # OpenAI (mock implementation)
-│   └── elevenlabs_mock.py # ElevenLabs (mock implementation)
+│   └── elevenlabs_mock.py # ElevenLabs (real implementation)
 ├── models.py           # Pydantic data models
 ├── coordinator.py      # Orchestrates all providers
 └── main.py            # FastAPI application
@@ -34,7 +34,7 @@ src/
 
 - Python 3.10+
 - UV package manager (recommended) or pip
-- API keys for Google Gemini and Sarvam AI
+- API keys for Google Gemini and Eleven Labs
 
 ## 🚀 Quick Start
 
@@ -68,8 +68,7 @@ pip install -r requirements.txt
 2. **Add your API keys** to `.env`:
    ```env
    GEMINI_API_KEY=your_actual_gemini_api_key
-   SARVAM_API_KEY=your_actual_sarvam_api_key
-   SARVAM_BASE_URL=https://api.sarvam.ai
+   ELEVENLABS_API_KEY=your-key
    ```
 
 ## 🎯 Usage

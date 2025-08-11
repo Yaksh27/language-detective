@@ -3,7 +3,7 @@ import time
 from typing import List
 from .models import ProviderResult, LanguageDetectionResponse
 from .connectors.openai_mock import OpenAIMockConnector
-from .connectors.elevenlabs_mock import ElevenLabsMockConnector
+from .connectors.sarvam_mock import SarvamMockConnector
 
 
 class MockLanguageDetectionCoordinator:
@@ -12,7 +12,7 @@ class MockLanguageDetectionCoordinator:
     def __init__(self):
         self.providers = [
             OpenAIMockConnector(),
-            ElevenLabsMockConnector()
+            SarvamMockConnector()
         ]
     
     async def detect_language_all_providers(self, audio_file_path: str) -> LanguageDetectionResponse:
